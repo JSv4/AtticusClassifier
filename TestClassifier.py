@@ -1,13 +1,20 @@
 import spacy
+<<<<<<< HEAD
 import pickle
+=======
+>>>>>>> 706b9c26af2815cc3e4afb9e7ef2b9281fa8fd66
 from lexnlp.nlp.en.segments.sentences import pre_process_document, normalize_text, get_sentence_list
 
 # Here we load our pre-trained Spacy model with the classifiers. Point Spacy to the directory you
 # saved your model to in Word2VecModelBuilder or BertModelBuilder. Be aware that this model is missing
 # other pipeline components and really just does classification, so, if you need other Spacy features,
 # you need to add them to the model pipeline after loading or change how the model is generated and saved.
+<<<<<<< HEAD
 nlp = spacy.load("/models/BertClassifier")
 nlp_pickle = pickle.load(open("./pre-trained/BertClassifier.pickle", "rb"))
+=======
+nlp = spacy.load("/home/jman/PycharmProjects/AtticusWord2Vec/data/Law2VecClassiier")
+>>>>>>> 706b9c26af2815cc3e4afb9e7ef2b9281fa8fd66
 
 text="""JOINT VENTURE AGREEMENT
 Collectible Concepts Group, Inc. ("CCGI") and Pivotal Self Service Tech, Inc.
@@ -89,9 +96,12 @@ for sent in get_sentence_list(normalize_text(pre_process_document(text))):
     cats = [label for label in cats if cats[label] > .7]
     print(cats)
 
+<<<<<<< HEAD
 print("\n\n#############################################33\nTest Pickled Model\n")
 for sent in get_sentence_list(normalize_text(pre_process_document(text))):
     print(f"LexNLP Sentence: {sent}")
     cats = nlp_pickle(sent).cats
     cats = [label for label in cats if cats[label] > .7]
     print(cats)
+=======
+>>>>>>> 706b9c26af2815cc3e4afb9e7ef2b9281fa8fd66
